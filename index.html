@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de Tareas</title>
+  </head>
+  <body>
+      <div class="container">
+        <div class="page-content page-container" id="page-content">
+            <div class="padding">
+                <div class="row container d-flex justify-content-center">
+                    <div class="col-lg-8 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h3 >Lista de Tareas</h3>                                    
+                                    </div>
+                                    <div class="col-md-4 text-right"><button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar</button></div>
+                                </div>
+                
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar una tarea.</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form class="row g-3" id="formulario">
+                                                <div class="col-md-12">
+                                                  <label for="" class="form-label">Apellido y Nombre:</label>
+                                                  <input type="text" class="form-control" name="ayn" id="ayn">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label for="" class="form-label">Descripcion de la tarea:</label>
+                                                    <input type="text" class="form-control" name="tarea"  id="descripcion">
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <label for="" class="form-label">Estado:</label>
+                                                    <select class="form-select" name="estado" id="estado" onchange="select()">
+                                                        <option value="0" selected>Seleccione una opcion</option>
+                                                        <option value="1">Pendiente</option>
+                                                        <option value="2">En Progreso</option>
+                                                        <option value="3">Completado</option>
+                                                      </select>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="boton">Guardar</button>
+                                                </div>
+                                              </form>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="table-responsive">
+                                    <table id="htmltable" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Apellido y Nombre</th>                                            
+                                                <th>Tarea</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Samso Park</td>                                            
+                                                <td>Conectar a la BD</td>
+                                                <td><label class="badge badge-danger">Pendiente</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Marlo Sanki</td>                                            
+                                                <td>Comprar medicamentos</td>
+                                                <td><label class="badge badge-warning">En Progreso</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>John ryte</td>                                            
+                                                <td>Vender Bicicleta</td>
+                                                <td><label class="badge badge-success">Completado</label></td>
+                                            </tr>
+                                            <tr>
+                                                <td>Dave</td>                                            
+                                                <td>Presentar trabajos de TLP</td>
+                                                <td><label class="badge badge-warning">En Progreso</label></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
